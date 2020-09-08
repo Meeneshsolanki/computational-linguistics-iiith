@@ -209,7 +209,18 @@ if($words_selected[0]!="%")
 			else
 				echo "<b style='font-size:30px'>".$words_selected[$i]."</b>&nbsp;&nbsp;&nbsp;";
 		}
+$cnt1=0;
+for($i=0;$i<count($words_selected);$i++)
+	if(strlen($words_selected[$i])!=0)
+		$cnt1=$cnt1+1;
 
+$cnt2=0;
+for($i=0;$i<count($words);$i++)
+	if(strlen($words[$i])!=0)
+		$cnt2=$cnt2+1;
+
+if($cnt1>=1 && $words_selected[0]!="%")
+	echo "<br/><br/><button onclick=\"clears('".$temp2."','".$lang."',".$turn.",'".$temp3."','".$temp4."');\">Re-form the sentence</button>"
 
 if($cnt1==$cnt2)
 {
