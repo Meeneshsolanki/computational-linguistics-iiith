@@ -196,7 +196,32 @@ for($i=0;$i<count($words);$i++)
 		if(!in_array($i,$position_actual))
 			echo "<button onclick=\"select('".$words[$i]."','".$temp1."','".$lang."','".$temp2."','".$temp3."',".$turn.",'".$temp4."',".$i.");\">".$words[$i]."</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	}
+echo "<br/><br/>";
 
+$count=0;
+if($words_selected[0]!="%")
+	for($i=0;$i<count($words_selected);$i++)
+		if(strlen($words_selected[$i])!=0)
+		{
+			$count++;
+			if ($count==1)
+				echo "<div style='color:#0000AA'><b>Formed Sentence</b> (<i style='color:#0000FF'>after selecting words</i>): </div><b style='font-size:30px'>".$words_selected[$i]."</b>&nbsp;&nbsp;&nbsp;";
+			else
+				echo "<b style='font-size:30px'>".$words_selected[$i]."</b>&nbsp;&nbsp;&nbsp;";
+		}
+
+$cnt1=0;
+for($i=0;$i<count($words_selected);$i++)
+	if(strlen($words_selected[$i])!=0)
+		$cnt1=$cnt1+1;
+
+$cnt2=0;
+for($i=0;$i<count($words);$i++)
+	if(strlen($words[$i])!=0)
+		$cnt2=$cnt2+1;
+
+if($cnt1>=1 && $words_selected[0]!="%")
+	echo "<br/><br/><button onclick=\"clears('".$temp2."','".$lang."',".$turn.",'".$temp3."','".$temp4."');\">Re-form the sentence</button>";
 
 if($cnt1==$cnt2)
 {
