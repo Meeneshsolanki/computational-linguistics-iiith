@@ -223,16 +223,7 @@ if($cnt1>=1 && $words_selected[0]!="%")
 	echo "<br/><br/><button onclick=\"clears('".$temp2."','".$lang."',".$turn.",'".$temp3."','".$temp4."');\">Re-form the sentence</button>"
 
 if($cnt1==$cnt2)
-{
-	echo "<br/><br/><button onclick=\"check('".$temp1."','".$temp2."','".$lang."',".$turn,",'".$temp3."','".$temp4."');\">Check the correctness of this  sentence</button>";
-	if($flag_correct==1 && $turn>=1)
-		echo "<br/><br/><p id='right_wrong' style='text-align:center;font-size:30px;color:#008000'>Right answer!!!</p>";
-	else if($flag_correct==0 && $turn>=1)
-	{
-		echo "<br/><br/><p id='right_wrong' style='text-align:center;font-size:30px;color:#FF0000'>Wrong answer!!!</p>";
-		echo "<br/><br/><div id='get_hide'><button onclick=\"getAnswer('".$temp3."');\">Get Correct Sentence</button></div>";
-	}
-}
+
 
 echo "<br/><br/><div align=\"center\" id='answer'></div>";
 
